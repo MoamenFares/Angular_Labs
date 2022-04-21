@@ -1,0 +1,42 @@
+<!--
+
+                  The Components From Core Module
+     *********************************************************************
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+          <meta name="author" content="Wink Hosting (www.winkhosting.com)" />
+          <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+          <title>RedTie</title>
+        </head>
+        <body>
+
+  <div id="page" align="center">
+    <div id="content" style="width:800px">
+
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<app-footer></app-footer>
+</div>
+</div>
+</body>
+</html> -->
+<button (click)="Show()">Show </button>
+<br>
+<input type="text" (keyup)="ShowMyName()">
+<br>
+<input type="text" (keyup)="Display($event)">
+<br>
+<input #t1 type="text" (keyup.enter)="DisplayAnyChange(t1.value)" (blur)="ValidateFun(t1.value)">
+<button (click)="ShowString(t1.value)">Show </button>
+<br>
+<!-- Two way Binding -->
+<!-- prop bind + event Bind -->
+<input #t2 type="text" [value]="title" (keyup)="ChangeTitle(t2.value)">
+{{title}}
+<br>
+<!-- Banana in the Box -->
+<!-- ngModel Can be used with any element have [value attribute] -->
+<input type="text" [(ngModel)]="title">
+<app-student></app-student>

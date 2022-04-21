@@ -1,0 +1,56 @@
+<p>student works!</p>
+ID<input type="text" [(ngModel)]="newstd.id"><br>
+Name<input type="text" [(ngModel)]="newstd.name"><br>
+Age<input type="text" [(ngModel)]="newstd.age"><br>
+Dept number<input type="text" [(ngModel)]="newstd.deptno"><br>
+<button (click)="Add()">Add sudent</button>
+<table border="2px" class="table table-borderd table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Dept Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of students">
+      <td >{{item.id}}</td>
+      <td >{{item.name}}</td>
+      <td >{{item.age}}</td>
+      <td >{{item.deptno}}</td>
+    </tr>
+
+  </tbody>
+</table>
+<br>
+{{std.id}}
+{{std.name}}
+{{std.age}}
+{{std.deptno}}
+<br>
+<br>
+<br>
+
+<!-- or -->
+{{std|json}}
+<br>
+<br>
+
+{{std.name|json}}
+<br>
+<br>
+
+
+{{std.name|uppercase}}
+<br>
+<br>
+
+{{std.name|lowercase}}
+<br>
+<br>
+{{NowDate}}
+<br>
+<br>
+{{NowDate|date:'yyyy/MM/dd'}}
+
