@@ -1,0 +1,31 @@
+<h1>department works!</h1>
+<h2>{{name}}</h2>
+<h2>{{x}}</h2>
+<!-- Event bind -->
+<button (click)="changeName()">Save</button>
+<br>
+<!-- string interpolation -->
+<img src="{{imgsrc}}" alt="{{imgalt}}">
+
+<!-- property bind -->
+<img [src]="imgsrc" [alt]="imgalt">
+<div [innerText]="'this is div'"></div>
+<table border="2">
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+  </tr>
+  <tr>
+<!-- string interpolation -->
+    <td colSpan="{{n}}">ggg</td>
+<!-- property bind -->
+    <td [colSpan]="n">ggg</td>
+<!-- Attribute bind -->
+    <td [attr.colspan]="n">ggg</td>
+
+  </tr>
+
+
+</table>
+
+
