@@ -1,1 +1,33 @@
+<br>
+<br>
+<br>
+--------------------------------------------------
 <p>department works!</p>
+<br>
+<input #a1 type="text" [(ngModel)]="NewDept.id" [value]="EditDPT.id" >
+<input #a2 type="text" [(ngModel)]="NewDept.name" [value]="EditDPT.name">
+<br>
+<button (click)="AddDept()">ADD</button>
+<button (click)="EditDept(a1.value,a2.value)">Edit</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of depts">
+      <td scope="row">{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>
+<button (click)="Delete(item.id)">Delete</button>
+<button (click)="Edit(item.id)">Edit</button>
+
+      </td>
+    </tr>
+
+  </tbody>
+</table>

@@ -1,29 +1,49 @@
 <p>student works!</p>
-ID<input type="text" [(ngModel)]="newstd.id"><br>
-Name<input type="text" [(ngModel)]="newstd.name"><br>
-Age<input type="text" [(ngModel)]="newstd.age"><br>
-Dept number<input type="text" [(ngModel)]="newstd.deptno"><br>
+ID<input type="text" [(ngModel)]="newstd.id" #a1 type="text" [value]="TempStd.id"><br>
+Name<input type="text" [(ngModel)]="newstd.name"  #a2  type="text" [value]="TempStd.name"><br>
+Age<input type="text" [(ngModel)]="newstd.age" #a3 type="text" [value]="TempStd.age"><br>
+Dept number<input type="text" [(ngModel)]="newstd.deptno"  #a4 type="text"[value]="TempStd.deptno"><br>
 <button (click)="Add()">Add sudent</button>
+<button (click)="Edit(a1.value,a2.value,a3.value,a4.value)">Edit</button>
+
 <table border="2px" class="table table-borderd table-hover">
   <thead>
     <tr>
+      <th>#</th>
       <th>ID</th>
       <th>Name</th>
       <th>Age</th>
       <th>Dept Number</th>
+      <th>Operation</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of students">
+    <tr *ngFor="let item of students;let x=index">
+      <td>{{x}}</td>
       <td >{{item.id}}</td>
       <td >{{item.name}}</td>
       <td >{{item.age}}</td>
       <td >{{item.deptno}}</td>
+      <td>
+        <button (click)="DeleteStudent(item.id)">Delete</button>
+        <button  (click)="DetailsOfStudent(item.id) ">Details</button>
+        <button   (click)="EditStudent(item.id) ">Edit</button>
+      </td>
     </tr>
 
   </tbody>
 </table>
-<br>
+
+ <div *ngIf="DetailesStd.id>0;else tt1">
+
+
+  <div [(ngModel)]="DetailesStd">{{DetailesStd|json}}</div>
+  <br>
+</div>
+<ng-template  #tt1>
+<div>No Object to view</div>
+</ng-template>
+
 {{std.id}}
 {{std.name}}
 {{std.age}}
@@ -54,3 +74,4 @@ Dept number<input type="text" [(ngModel)]="newstd.deptno"><br>
 <br>
 {{NowDate|date:'yyyy/MM/dd'}}
 
+<app-department></app-department>
