@@ -1,0 +1,25 @@
+<a   class="btn btn-success" [routerLink]="['/students/add']" >Add Student</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of students">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.age}}</td>
+      <td>
+        <a class="btn btn-success" [routerLink]="['/students/details',item.id]">Details</a>
+
+        <a class="btn btn-danger" [routerLink]="['/students/details2',item.id]">Details</a>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+<router-outlet></router-outlet>
