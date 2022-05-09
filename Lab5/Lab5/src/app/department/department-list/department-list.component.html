@@ -1,0 +1,36 @@
+<p>department-list works!</p>
+<div style="margin: 10px;">
+
+  <button class="btn btn-success" (click)="Details()" >Details</button>
+</div>
+
+<div>
+  <button class="btn btn-success" (click)="Edit()" >Edit</button>
+</div>
+<router-outlet></router-outlet>
+--------------------------------
+<table class="table table-borded">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Operation</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let item of depts">
+      <td>{{item._id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.location}}</td>
+      <td >
+        <a class="btn btn-danger" [routerLink]="['/departments/details',item._id]">Details</a>
+        <a class="btn btn-danger" [routerLink]="['/departments/Edit',item._id]">Edit</a>
+        <a class="btn btn-danger" [routerLink]="['/departments/delete',item._id]">delete</a>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+
